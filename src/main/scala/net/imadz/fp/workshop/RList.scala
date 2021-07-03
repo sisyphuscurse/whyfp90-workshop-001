@@ -61,7 +61,7 @@ object RList {
   // 6. Define doubleAll function
   def doubleAll: RList[Int] => RList[Int]                           = foldr[Int, RList[Int]](RNil)(doubleAndCons)
   private def doubleAndCons: Int => RList[Int] => RList[Int]        = fAndCons(double)
-   def double: Int => Int = _ * 2
+  def double: Int => Int = _ * 2
   private def fAndCons[A, B](f: A => B): A => RList[B] => RList[B]  = f andThen cons
   // 7. Extract map combinator function
   // [1, 2, 3, 4, 5] => ["a", "b", "c", "d", "e"]
